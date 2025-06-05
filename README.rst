@@ -30,7 +30,10 @@ Examples
 
   # Get all `.wav` files in `mypath` and extract named captures as
   # categorical `subj` and `token` columns
-  df = dir_to_df(mypath, fnpat=r'(?P<subj>[A-Z]+\d+)-(?P<token>\d+)\.wav$')
+  df = dir_to_df(
+      mypath,
+      fnpat=r'(?P<subj>[A-Z]+\d+)-(?P<token>\d+)\.wav$'
+  )
 
   # Get today's date in YYYYMMDD format
   todaystr = today_YYYYMMDD()
