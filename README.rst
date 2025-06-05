@@ -20,7 +20,7 @@ Examples
 
 .. code-block:: Python
 
-  from fileorg import dir_to_df, today_YYYYMMDD, timestamp_now, cp_backup
+  from fileorg import dir_to_df
 
   # Get all files in `mypath` as a dataframe
   df = dir_to_df(mypath)
@@ -35,12 +35,20 @@ Examples
       fnpat=r'(?P<subj>[A-Z]+\d+)-(?P<token>\d+)\.wav$'
   )
 
+.. code-block:: Python
+
+  from fileorg import today_YYYYMMDD, timestamp_now
+
   # Get today's date in YYYYMMDD format
   todaystr = today_YYYYMMDD()
 
   # Get timestamp as YYYY-MM-DDTHHMMSS string and UTC offset for current
   # the current datetime
   tstamp, utcoffset = timestamp_now()
+
+.. code-block:: Python
+
+  from fileorg import cp_backup
 
   # Copy a file to a backup directory with a version number
   copyname = cp_backup(origfile, backupdir)
