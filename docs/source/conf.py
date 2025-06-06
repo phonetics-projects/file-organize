@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'fileorg'
+project = 'fileorganize'
 copyright = '2025, Regents of the University of California'
 author = 'Ronald Sprouse'
 release = 'Beta'

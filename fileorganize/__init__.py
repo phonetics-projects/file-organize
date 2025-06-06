@@ -1,5 +1,5 @@
-__name__="fileorg"
-__version__="0.0.3"
+__name__="fileorganize"
+__version__="0.0.4"
 
 # -------- functions in the "utils" portion of the package -------
 from .utils import *

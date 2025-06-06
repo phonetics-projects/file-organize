@@ -1,6 +1,6 @@
-=======
-fileorg
-=======
+============
+fileorganize
+============
 
 Utility functions for corpus and experiment file management in Python.
 
@@ -10,7 +10,7 @@ Installation
 
 .. code-block:: Python
 		
-  pip install fileorg
+  pip install fileorganize
 
 =============
 Documentation
@@ -22,7 +22,7 @@ Examples
 
 .. code-block:: Python
 
-  from fileorg import dir_to_df
+  from fileorganize import dir_to_df
 
   # Get all files in `mypath` as a dataframe
   df = dir_to_df(mypath)
@@ -39,7 +39,7 @@ Examples
 
 .. code-block:: Python
 
-  from fileorg import today_YYYYMMDD, timestamp_now
+  from fileorganize import today_YYYYMMDD, timestamp_now
 
   # Get today's date in YYYYMMDD format
   todaystr = today_YYYYMMDD()
@@ -50,7 +50,7 @@ Examples
 
 .. code-block:: Python
 
-  from fileorg import cp_backup
+  from fileorganize import cp_backup
 
   # Copy a file to a backup directory with a version number
   copyname = cp_backup(origfile, backupdir)

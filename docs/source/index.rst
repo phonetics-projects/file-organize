@@ -9,7 +9,9 @@ General purpose functions for working with corpora.
 Install
 =======
 
->>> pip install fileorg
+.. code-block:: Python
+
+    pip install fileorganize
 
 
 .. autofunction:: fileorg.dir_to_df

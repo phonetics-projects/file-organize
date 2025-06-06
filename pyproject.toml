@@ -3,7 +3,7 @@ requires = ['setuptools >= 77.0.3', 'wheel']
 build-backend = "setuptools.build_meta"
 
 [project]
-name = 'fileorg'
+name = 'fileorganize'
 authors = [{name = "Keith Johnson", email = "kjohnson@berkeley.edu"},
             {name = "Ronald Sprouse", email = "ronald@berkeley.edu"} 
 ]
@@ -30,9 +30,9 @@ Issues = "https://github.com/phonetics-projects/file-organization/issues"
 
 [tool.setuptools]
 packages = [
-    'fileorg'
+    'fileorganize'
 ]
 
 [tool.setuptools.dynamic]
-version = {attr="fileorg.__version__"}
+version = {attr="fileorganize.__version__"}
 
