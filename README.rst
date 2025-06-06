@@ -8,7 +8,9 @@ Utility functions for corpus and experiment file management in Python.
 Installation
 ============
 
-pip install git+https://github.com/phonetics-projects/file-organization
+.. code-block:: Python
+		
+  pip install fileorg
 
 =============
 Documentation
