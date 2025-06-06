@@ -42,8 +42,7 @@ fnpat : str, re
 
     If you need to use a flag with your pattern, you can use a precompiled
     regex for the value of `fnpat`. For example, you can do
-    case-insensitive matching of '.wav' and '.WAV' files with
-    `re.compile(r'\.wav$', re.IGNORECASE)`.
+    case-insensitive matching with `re.compile(pattern, re.IGNORECASE)`.
 
 dirpat : str, re
     Same as `fnpat`, only applied against the relative path in dirname.
