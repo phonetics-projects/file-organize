@@ -1,11 +1,12 @@
-
-Fileorg
-=======
+============
+Fileorganize
+============
 
 General purpose functions for working with corpora.
 
-* Ronald Sprouse
+Ronald Sprouse
 
+=======
 Install
 =======
 
@@ -14,8 +15,8 @@ Install
     pip install fileorganize
 
 
-.. autofunction:: fileorg.dir_to_df
-.. autofunction:: fileorg.today_YYYYMMDD
-.. autofunction:: fileorg.timestamp_now
-.. autofunction:: fileorg.cp_backup
+.. autofunction:: fileorganize.dir_to_df
+.. autofunction:: fileorganize.today_YYYYMMDD
+.. autofunction:: fileorganize.timestamp_now
+.. autofunction:: fileorganize.cp_backup
 
