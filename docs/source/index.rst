@@ -1,4 +1,4 @@
-============
+
 Fileorganize
 ============
 
@@ -6,7 +6,6 @@ General purpose functions for working with corpora.
 
 Ronald Sprouse
 
-=======
 Install
 =======
 
@@ -14,6 +13,8 @@ Install
 
     pip install fileorganize
 
+Functions
+=========
 
 .. autofunction:: fileorganize.dir_to_df
 .. autofunction:: fileorganize.today_YYYYMMDD

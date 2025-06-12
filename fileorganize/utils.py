@@ -25,62 +25,68 @@ output, and also to add additional file metadata.
 Parameters
 ----------
 
+
 dirname : str
     Top-level directory name for filename search.
 
-
-Optional parameters
--------------------
-
-fnpat : str, re
+fnpat : str, re, default=None
     Regular expression pattern that defines the filenames to return.
     The only filenames in the result set will be those that return a match
     for `re.search(fnpat, filename)`.
 
-    If you use named captures in `fnpat`, new columns corresponding to the
-    capture groups will be added to the output dataframe as dtype 'Categorical'.
+    .. note::
+       If you use named captures in `fnpat`, new columns corresponding to the
+       capture groups will be added to the output dataframe as dtype 'Categorical'.
 
-    If you need to use a flag with your pattern, you can use a precompiled
-    regex for the value of `fnpat`. For example, you can do
-    case-insensitive matching with `re.compile(pattern, re.IGNORECASE)`.
+       If you need to use a flag with your pattern, you can use a precompiled
+       regex for the value of `fnpat`. For example, you can do
+       case-insensitive matching with `re.compile(pattern, re.IGNORECASE)`.
 
-dirpat : str, re
+dirpat : str, re, default=None
     Same as `fnpat`, only applied against the relative path in dirname.
     Relative paths that do not match `dirpat` will be skipped.
 
-addcols = str, list of str (default [])
+addcols : str, list of str, default=[]
     One or more additional columns to include in the output. Possible names
     and values provided are:
-    'dirname': the user-provided top-level directory
-    'barename': the filename without path or extension
-    'ext': the filename extension
-    'mtime': the last modification time of the file
-    'bytes': the size of the file in bytes
+
+    .. table:: Columns that can be added
+       :widths: auto
+
+       ==========  ======================================
+       Name        value
+       ==========  ======================================
+       'dirname'   the user-provided top-level directory
+       'barename'  the filename without path or extension
+       'ext'       the filename extension
+       'mtime'     the last modification time of the file
+       'bytes'     the size of the file in bytes
+       ==========  ======================================
 
     The 'mtime' column is cast to Pandas Timestamps automatically unless
     `to_datetime` is False. Resolution of the time-based stats is dependent
     on your platform; see the `os.stat` documentation.
 
-sentinel : str (default '')
+sentinel : str, default=''
     Name of the sentinel file, which marks a directory tree to be ignored. No
     filenames from the directory containing the sentinel file will be included
     in the output, nor will any filenames from any of its subdirectories.
     If the value of `sentinel` is '' or None, the sentinel file check will not
     be performed.
 
-to_datetime : boolean (default True)
+to_datetime : boolean, default=True
     If True, 'mtime' stats will be converted from Unix epoch to datetime.
     If False, the values will not be converted.
 
-dotfiles : boolean (default False)
+dotfiles : boolean, default=False
     If True, include filenames beginning with `.` in the output. Otherwise,
     omit these names.
 
-dotdirs : boolean (default False)
+dotdirs : boolean, default=False
     If True, descend into directories with names that begin with `.`. If
     False, do not descend into these directories.
 
-sort_by : list of str (default ['relpath', 'fname']
+sort_by : list of str, default=['relpath', 'fname']
     Sort output dataframe rows by the columns named in the list. Specify an empty
     list `[]` if no sorting is desired.
 
