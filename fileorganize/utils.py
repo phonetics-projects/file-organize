@@ -102,6 +102,32 @@ Returns
 fnamedf : DataFrame
     Dataframe of filename rows.
 
+Example
+-------
+In this example we list the .wav files in the Dimex corpus of Mexican Spanish.
+A typical file name is `s09101.wav`, which indicates that the file is of speaker
+`s091` reading sentence `01`.  To capture this information the **fnpat** variable has two named captures.  
+The first ``(?P<subj>s\d\d\d)`` says to parse the filename and find a sequence of 's' 
+followed by three digits, keeping that sequence in the variable `subj`. The second named capture
+``(?P<sentence>\d+)`` says to keep the remaining one or more digits in the 
+variable `sentence`.  Note the final two columns in the dataframe.
+
+.. code-block:: Python
+
+    path_to_corpus = Path('./dimex')
+
+    corpus_list = dir_to_df(path_to_corpus,
+               fnpat = r'(?P<subj>s\d\d\d)(?P<sentence>\d+)\.wav',
+               addcols = ["dirname", "barename"])
+    corpus_list.head()
+
+.. figure:: images/dir_to_df.png
+       :scale: 50 %
+       :alt: The first few lines of the dataframe corpus_list, which was created by the above code.
+       :align: center
+
+       The first few lines of the dataframe corpus_list, which was created by the above code.
+
 '''
     # Coerce addcols to list if passed as single string.
     try:
